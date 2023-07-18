@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Password Strength Tester</title>
+        <link rel="stylesheet" type="text/css" href="design.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"> 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <script src="app.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <a href="#" class="logo">PAST</a>
+            <ul>
+                <li><a href="#" class="active">HOME</a></li>
+                <li><a href="#sec">ABOUT</a></li>
+                <li><a href="#testnowp">SERVICES</a></li>
+                <li><a href="#passgenp">GENERATOR</a></li>
+            </ul>
+        </header>
+        <section>
+            <img src="stars.png" id="stars">
+            <img src="moon.png" id="moon">
+            <img src="mountains_behind.png" id="mountains_behind">
+            <h2 id="text">Password Strength Tester</h2>
+            <a href="#testnowp" id="btn">Test</a>
+            <img src="mountains_front.png" id="mountains_front">
+        </section>
+        <div class="sec" id="sec">
+            <h2>ABOUT US</h2>
+            <p>Welcome to PAST (Password Strength Tester)!<br><br>At PAST, we understand the importance of 
+            maintaining strong and secure passwords in today's digital landscape. With the ever-increasing 
+            number of online services and the constant threat of data breaches, it has become crucial to 
+            protect your personal information.<br><br>Our mission at PAST is to empower individuals and 
+            organizations by providing them with a reliable and efficient tool to evaluate the strength of 
+            their passwords. We believe that education and awareness are key to enhancing digital security, 
+            and that starts with understanding the vulnerability of your passwords.<br><br>With our 
+            state-of-the-art password strength testing algorithm, PAST evaluates the robustness of your 
+            passwords against a wide range of security factors. We analyze factors such as length, complexity, 
+            character variation, and the inclusion of numbers, symbols, and uppercase and lowercase letters. 
+            By doing so, we offer valuable insights into the effectiveness of your password choices.<br><br>
+            At PAST, we prioritize user privacy and security. We have implemented stringent measures to protect
+            your password information during the testing process. We do not store any passwords in our system, 
+            ensuring complete confidentiality.<br><br>Whether you're an individual looking to strengthen your personal 
+            passwords or an organization striving to bolster the security of your users' accounts, PAST is your go-to 
+            tool. Our user-friendly interface and accurate assessments make it easy to understand your password's 
+            strength level and make informed decisions on how to improve it.<br><br>Remember, the first line of
+            defense against unauthorized access is a strong password. Let PAST be your guide in creating 
+            resilient passwords that provide the protection you need in the digital world.<br><br>Stay secure 
+            with PAST!</p>
+        </div>
+
+        <div class="testnowp" id="testnowp">
+            <div class="testnow" id="testnow">   
+                <div class="pass-field" id="pass-field">
+                <input type="password" placeholder="Ex@mp!3Pa5sW0rD" onkeypress="return disallowSpace(event)" autocomplete="new-password">
+                    <i class="fa-solid fa-eye"></i>
+            </div>
+                <div class="content" id="content">
+                 <p>Password must contains</p>
+                    <ul class="requirement-list" id="requirement-list">
+                     <li>
+                        <i class="fa-solid fa-circle"></i>
+                        <span>At least 8 characters length</span>
+                     </li>
+                     <li>
+                        <i class="fa-solid fa-circle"></i>
+                        <span>At least 1 number (0...9)</span>
+                     </li>
+                     <li>
+                        <i class="fa-solid fa-circle"></i>
+                        <span>At least 1 lowercase letter (a...z)</span>
+                     </li>
+                     <li>
+                        <i class="fa-solid fa-circle"></i>
+                        <span>At least 1 uppercase character (A...Z)</span>
+                     </li>
+                     <li>
+                        <i class="fa-solid fa-circle"></i>
+                        <span>At least 1 special character (!...$)</span>
+                     </li>
+                </ul>
+            </div>
+        </div>
+        </div>
+        
+        <script>
+            let stars = document.getElementById('stars');
+            let moon = document.getElementById('moon');
+            let mountains_behind = document.getElementById('mountains_behind');
+            let text = document.getElementById('text');
+            let btn = document.getElementById('btn');
+            let mountains_front = document.getElementById('mountains_front');
+            let header = document.querySelector('header');
+
+            window.addEventListener('scroll',function(){
+                let value = window.scrollY;
+                stars.style.left = value * 0.25 + 'px';
+                moon.style.top = value * 1.05 + 'px';
+                mountains_behind.style.left = value * 0.5 + 'px';
+                mountains_front.style.left = value * 0 + 'px';
+                text.style.marginRight = value * 4 + 'px';
+                text.style.marginTop = value * 1.5 + 'px';
+                btn.style.marginTop = value * 1.5 + 'px';
+                header.style.top = value * 0.5 + 'px';
+            })
+        </script>
+
+        <div class="passgenp" id="passgenp" style="display: flex; align-items: center; justify-content: center; min-height: 100vh;">
+        <div class="passgen">
+            <h2 style="text-align: center;">Password Generator</h2>
+            <div class="passgenwrapper">
+                <div class="passgeninputbox">
+                    <input type="text" value="Ex@mp13_PAs5W0rD" disabled>
+                    <span class="material-symbols-outlined">copy_all</span>
+                </div>
+                <div class="passgenindicator"></div>
+                <div class="passgenlength">
+                    <div class="passgendetails">
+                        <label class="passgentitle">Password Length</label>
+                        <span>15</span>
+                    </div>
+                    <input type="range" min="1" max="30" value="15" step="1">
+                </div>
+                <div class="passgensettings">
+                    <label class="passgensettitle">Password Settings</label>
+                    <ul class="passgenoptions">
+                        <li class="passgenoption">
+                            <input type="checkbox" id="passgenlowercase" checked>
+                            <label for="passgenlowercase">Lowercase (a-z)</label>
+                        </li>
+                        <li class="passgenoption">
+                            <input type="checkbox" id="passgenuppercase">
+                            <label for="passgenuppercase">Uppercase (A-Z)</label>
+                        </li>
+                        <li class="passgenoption">
+                            <input type="checkbox" id="passgennumbers">
+                            <label for="passgennumbers">Numbers (0-9)</label>
+                        </li>
+                        <li class="passgenoption">
+                            <input type="checkbox" id="passgensymbols">
+                            <label for="passgensymbols">Symbols (!-$)</label>
+                        </li>
+                        <li class="passgenoption">
+                            <input type="checkbox" id="passgenexcdup">
+                            <label for="passgenexcdup" style="font-size: 14px;">Exclude Duplicated Letters</label>
+                        </li>
+                        <li class="passgenoption">
+                            <input type="checkbox" id="passgenspaces">
+                            <label for="passgenspaces">Include Spaces</label>
+                        </li>
+                    </ul>
+                </div>
+                <button class="passgenbtn">Generate Password</button>
+            </div>
+        </div>
+    </div>
+
+    </body>
+</html>
