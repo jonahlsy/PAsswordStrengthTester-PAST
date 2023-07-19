@@ -10,7 +10,7 @@ passIndicator = document.querySelector(".passgenindicator"),
 generateBtn = document.querySelector(".passgenbtn");
 
 const requirements = [
-    { regex: /.{8,}/, index: 0 },
+    { regex: /.{17,}/, index: 0 },
     { regex: /[0-9]/, index: 1 },
     { regex: /[a-z]/, index: 2 },
     { regex: /[A-Z]/, index: 3 },

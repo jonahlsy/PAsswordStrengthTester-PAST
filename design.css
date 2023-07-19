@@ -128,7 +128,13 @@ section img#mountains_front
 }
 .testnow
 {
-    display: flex;
+    width: 450px;
+    overflow: hidden;
+    padding: 28px;
+    border-radius: 8px;
+}
+
+    /* display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
@@ -141,10 +147,13 @@ section img#mountains_front
     max-width: 100%;
     padding: 28px;
     border-radius: 40px;
-}
-.pass-field
+} */
+.testnow .pass-field
 {
-    margin-bottom: 10px;
+    height: 65px;
+    width: 100%;
+    position: relative;
+    color: #fff;
 }
 .pass-field input
 {
@@ -153,33 +162,35 @@ section img#mountains_front
     padding: 0 17px;
     outline: none;
     font-size: 1.5rem;
-    border-radius: 40px;
+    border-radius: 5px;
     border: 1px solid #fff;
+    background: #03011C;
+}
+.pass-field input:focus
+{
+    padding: 0 16px;
+    border: 2px solid #fff;
 }
 .pass-field i
 {
-    right: 100px;
-    top: 16%;
-    color: #999;
+    right: 18px;
+    top: 50%;
     font-size: 1.5rem;
+    color: #fff;
     cursor: pointer;
     position: absolute;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-image: none;
     transform: translateY(-50%);
 }
-.content
+.testnow .content
 {
-    margin-top: 10px;
+    margin: 20px 0 10px;
 }
 .content p
 {
     font-size: 1.5rem;
-    margin-bottom: 15px;
+    color: #fff;
 }
-.content requirement-list
+.content .requirement-list
 {
     margin-top: 20px;
 }
@@ -190,6 +201,7 @@ section img#mountains_front
     display: flex;
     align-items: center;
     margin-bottom: 15px;
+    color: #fff;
 }
 .requirement-list li i
 {
@@ -197,7 +209,7 @@ section img#mountains_front
     color: #aaa;
     width: 20px;
 }
-.requirement-list li.valid
+.requirement-list li.valid i
 {
     font-size: 1.3rem;
     color: #00B512;
